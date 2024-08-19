@@ -2,6 +2,8 @@
 # Register
 
 def register():
+    print('Library Management System')
+    print('Register')
     username = input('Enter Username: ')
     password = input('Enter New Password: ')
     usertype = input('Enter Usertype(Superadmin or Manager): ')
@@ -12,6 +14,8 @@ def register():
 
 
 def login():
+    print('Library Management System')
+    print('Register')
     username = input('Enter Username: ')
     password = input('Enter Password: ')
     
@@ -26,6 +30,8 @@ def login():
             
 
 while True:
+    print('Library Management System')
+    print('Choices')
     Choice = input('1.register\t\t2.login\t\tq.quit: ')
     
     if Choice == '1':
