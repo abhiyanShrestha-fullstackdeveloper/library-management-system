@@ -38,7 +38,13 @@ while True:
         register()
         
     elif Choice == '2':
-        login()
+        usertype = login()
+        
+        if usertype:
+            if usertype == 'superadmin':
+                while True:
+                    
+            
     
     elif Choice == 'q':
         break
