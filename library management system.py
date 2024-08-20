@@ -65,62 +65,66 @@ def view_booklist():
             
 ###########################################
 # Main Program
-while True:
-    print('Library Management System')
-    print('Choices')
-    Choice = input('1.Register\t\t2.Login\t\tq.Quit: ')
-    
-    if Choice == '1':
-        register()
+def main():
+    while True:
+        print('Library Management System')
+        print('Choices')
+        Choice = input('1.Register\t\t2.Login\t\tq.Quit: ')
         
-    elif Choice == '2':
-        usertype = login()
-        
-        if usertype:
-            if usertype == 'superadmin':
-                while True:
-                    Choice = input('1.Book List 2.Add Books 3.Book For Rent 4. Delete Book List q.Logout: ')
-                    
-                    if Choice == '1':
-                        view_booklist()
-                    
-                    elif Choice == '2':
-                        add_books()
-                    
-                    elif Choice == '3':
-                        book_forrent()
-                    
-                    elif Choice == '4':
-                        delete_booklist()
-                    
-                    elif Choice == 'q':
-                        break
-                    else:
-                        print('Invalid Choice!')
-            else:
-                while True:
-                    Choice == input('1.Book List 2. Add Books 3. Book For Rent q. Logout: ')
-                    
-                    if Choice == '1':
-                        view_booklist()
-                    
-                    elif Choice == '2':
-                        add_books()
-                    
-                    elif Choice == '3':
-                        book_forrent()
-                    
-                    elif Choice == 'q':
-                        break
-                    
-                    else:
-                        print('Invalid Choice!')
+        if Choice == '1':
+            register()
+            
+        elif Choice == '2':
+            usertype = login()
+            
+            if usertype:
+                if usertype == 'superadmin':
+                    while True:
+                        Choice = input('1.Book List 2.Add Books 3.Book For Rent 4. Delete Book List 5. Add User q.Logout: ')
                         
-    
-    elif Choice == 'q':
-        break
-    
-    else:
-        print('Invalid Input!')
+                        if Choice == '1':
+                            view_booklist()
+                        
+                        elif Choice == '2':
+                            add_books()
+                        
+                        elif Choice == '3':
+                            book_forrent()
+                        
+                        elif Choice == '4':
+                            delete_booklist()
+                        
+                        elif Choice == '5':
+                            register()
+                        
+                        elif Choice == 'q':
+                            break
+                        else:
+                            print('Invalid Choice!')
+                else:
+                    while True:
+                        Choice == input('1.Book List 2. Add Books 3. Book For Rent q. Logout: ')
+                        
+                        if Choice == '1':
+                            view_booklist()
+                        
+                        elif Choice == '2':
+                            add_books()
+                        
+                        elif Choice == '3':
+                            book_forrent()
+                        
+                        elif Choice == 'q':
+                            break
+                        
+                        else:
+                            print('Invalid Choice!')
+                            
         
-    
+        elif Choice == 'q':
+            break
+        
+        else:
+            print('Invalid Input!')
+        
+main()   
