@@ -46,7 +46,22 @@ def add_books():
 ############################################
 # View Book List
 
+def view_booklist():
+    try:
+        with open('bookslist.txt','r') as f:
+            print('Book Name\t\tBook Category\t\tBook Description\t\tBook Author\t\tBook Price')
+            for line in f:
+                try:
+                    book_name,book_category,book_description,book_author,book_price = line.strip().split(',')
+                    print(f'{book_name},{book_category},{book_description},{book_author},{book_price}\n')
+                except ValueError:
+                    print('Invalid Data!')
+    except FileNotFoundError:
+        print('File Not Found!')
 
+############################################
+# Book For Rent
+                    
             
 ###########################################
 # Main Program
