@@ -16,7 +16,7 @@ def register():
 # Login
 def login():
     print('Library Management System')
-    print('Register')
+    print('Login')
     username = input('Enter Username: ')
     password = input('Enter Password: ')
     
@@ -69,12 +69,9 @@ def main():
     while True:
         print('Library Management System')
         print('Choices')
-        Choice = input('1.Register\t\t2.Login\t\tq.Quit: ')
+        Choice = input('1.Login\t\tq.Quit: ')
         
         if Choice == '1':
-            register()
-            
-        elif Choice == '2':
             usertype = login()
             
             if usertype:
@@ -127,4 +124,5 @@ def main():
         else:
             print('Invalid Input!')
         
+            
 main()   
