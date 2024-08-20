@@ -42,6 +42,11 @@ def add_books():
     with open('bookslist.txt','a') as f:
         f.write(f'{bookname},{bookcategory},{bookdescription},{bookauthor},{bookprice}\n')
         print('Book Added Successfully in System')
+
+############################################
+# View Book List
+
+
             
 ###########################################
 # Main Program
