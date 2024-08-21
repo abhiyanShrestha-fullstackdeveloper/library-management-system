@@ -64,7 +64,20 @@ def view_booklist():
 import datetime
 
 def book_forrent():
-    customerid                 
+    customerid = int(input('Enter Id: '))
+    customername = input('Enter Customer Name: ')
+    bookname = input('Enter Book Name: ')
+    bookcategory = input('Enter Book Category: ')
+    numberofdays = input('Enter Number Of Days: ')
+    
+    # Get current date as taken date
+    taken_date = datetime.date.today()
+
+    # Calculate return date by adding the number of days to the taken date
+    return_date = taken_date + datetime.timedelta(days=numberofdays)
+    
+    with open('bookforrent.txt','a') as f:
+        f.write(f'{customerid},{customername},{bookname},{bookcategory},{numberofdays},{taken_date},{return_date}\n')                
             
 ###########################################
 # Main Program
