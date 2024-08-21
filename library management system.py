@@ -78,7 +78,7 @@ def book_forrent():
     
     with open('bookforrent.txt','a') as f:
         f.write(f'{customerid},{customername},{bookname},{bookcategory},{numberofdays},{taken_date},{return_date}\n')                
-            
+        print('Successfully Added Customer Details For Rent.')
 ###########################################
 # Main Program
 def main():
