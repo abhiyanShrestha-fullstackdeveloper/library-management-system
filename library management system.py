@@ -61,7 +61,10 @@ def view_booklist():
 
 ############################################
 # Book For Rent
-                    
+import datetime
+
+def book_forrent():
+    customerid                 
             
 ###########################################
 # Main Program
@@ -77,7 +80,7 @@ def main():
             if usertype:
                 if usertype == 'superadmin':
                     while True:
-                        Choice = input('1.Book List 2.Add Books 3.Book For Rent 4. Delete Book List 5. Add User q.Logout: ')
+                        Choice = input('1.View Book List 2.Add Books 3.Add Book For Rent 4.View Book For Rent 5. Add User 6.Delete Book List q.Logout: ')
                         
                         if Choice == '1':
                             view_booklist()
@@ -89,10 +92,13 @@ def main():
                             book_forrent()
                         
                         elif Choice == '4':
-                            delete_booklist()
+                            view_bookforrent()
                         
                         elif Choice == '5':
                             register()
+                        
+                        elif Choice == '6':
+                            delete_booklist()
                         
                         elif Choice == 'q':
                             break
@@ -100,7 +106,7 @@ def main():
                             print('Invalid Choice!')
                 else:
                     while True:
-                        Choice == input('1.Book List 2. Add Books 3. Book For Rent q. Logout: ')
+                        Choice == input('1.Book List 2.Add Books 3.Add Book For Rent 4.View Book For Rent q.Logout: ')
                         
                         if Choice == '1':
                             view_booklist()
@@ -110,6 +116,9 @@ def main():
                         
                         elif Choice == '3':
                             book_forrent()
+                        
+                        elif Choice == '4':
+                            view_bookforrent()
                         
                         elif Choice == 'q':
                             break
