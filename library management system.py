@@ -79,6 +79,20 @@ def book_forrent():
     with open('bookforrent.txt','a') as f:
         f.write(f'{customerid},{customername},{bookname},{bookcategory},{numberofdays},{taken_date},{return_date}\n')                
         print('Successfully Added Customer Details For Rent.')
+
+def view_bookforrent():
+    try:
+        with open('bookforrent.txt','r') as f:
+            print('customer id\tcustomername\t\tbookname\t\tbookcategory\tnumber of days\ttaken date\t\treturn date')
+            for line in f:
+                try:
+                    customer_id,customer_name,book_name,book_category,number_ofdays,takendate,returndate = line.strip().split(',')
+                    print(f'{customer_id},{customer_name},{book_name},{book_category},{number_ofdays},{takendate},{returndate}\n')
+                
+                except ValueError:
+                    print('Invalid Data!')
+    except FileNotFoundError:
+        print('File Not Found!')
 ###########################################
 # Main Program
 def main():
