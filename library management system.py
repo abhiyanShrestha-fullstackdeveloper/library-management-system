@@ -93,6 +93,29 @@ def view_bookforrent():
                     print('Invalid Data!')
     except FileNotFoundError:
         print('File Not Found!')
+
+############################################
+# Delete Book List
+
+def delete_booklist(book_name):
+    
+    """Deletes a book from the bookslist.txt file based on its name.
+
+    Args:
+        book_name (str): The name of the book to delete.
+    """
+
+    with open('bookslist.txt', 'r') as f:
+        lines = f.readlines()
+
+    with open('bookslist.txt', 'w') as f:
+        for line in lines:
+            book_data = line.strip().split(',')
+            if book_data[0] != book_name:
+                f.write(line)
+        print('Book Deleted Successfully from System')
+    
+
 ###########################################
 # Main Program
 def main():
